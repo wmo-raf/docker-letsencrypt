@@ -5,14 +5,14 @@ services:
     image: certbot/certbot:latest
     command: > 
         sh -c "
-          certbot certonly --standalone \
-          -d ${DOMAINNAME} \
-          --text \
-          --agree-tos \
+          certbot certonly --standalone 
+          -d ${DOMAINNAME} 
+          --text 
+          --agree-tos 
           --email ${EMAIL}
-          --server https://acme-v02.api.letsencrypt.org/directory \
+          --server https://acme-v02.api.letsencrypt.org/directory 
           --rsa-key-size 4096 --verbose 
-          --keep-until-expiring \
+          --keep-until-expiring 
           --preferred-challenges=http
         "
     entrypoint: ""
